@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --hx-bg: #0c1117;
+    --hx-surface: #121a22;
+    --hx-surface-raised: #182230;
+    --hx-border: #243041;
+    --hx-text: #e7eef6;
+    --hx-text-muted: #8b9bb0;
+    --hx-accent: #d9773a;
+    --hx-on-accent: #140c08;
+    --hx-success: #3ecf8e;
+    --hx-warning: #e6b84d;
+    --hx-danger: #ef6a6a;
+    --hx-tool: #5eb1ff;
+    --hx-user: #c8d6e5;
+    --hx-radius-sm: 4px;
+    --hx-radius-md: 8px;
+    --hx-font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --hx-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+    --background: var(--hx-bg);
+    --foreground: var(--hx-text);
+    --card: var(--hx-surface);
+    --card-foreground: var(--hx-text);
+    --popover: var(--hx-surface-raised);
+    --popover-foreground: var(--hx-text);
+    --primary: var(--hx-accent);
+    --primary-foreground: var(--hx-on-accent);
+    --secondary: var(--hx-surface-raised);
+    --secondary-foreground: var(--hx-text);
+    --muted: var(--hx-surface);
+    --muted-foreground: var(--hx-text-muted);
+    --accent: var(--hx-surface-raised);
+    --accent-foreground: var(--hx-text);
+    --destructive: var(--hx-danger);
+    --border: var(--hx-border);
+    --input: var(--hx-border);
+    --ring: var(--hx-accent);
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background: var(--hx-bg);
+    color: var(--hx-text);
+    font-family: var(--font-ibm-plex-sans), var(--hx-font-sans);
+  }
+}
+
+.helix-shell {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(217, 119, 58, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(94, 177, 255, 0.1), transparent 50%),
+    linear-gradient(180deg, #0a0f14 0%, var(--hx-bg) 40%, #0e1620 100%);
+}
+
+.helix-grid {
+  background-image:
+    linear-gradient(rgba(36, 48, 65, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 48, 65, 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.helix-orb {
+  animation: helix-drift 12s ease-in-out infinite alternate;
+}
+
+.helix-orb-delay {
+  animation: helix-drift 16s ease-in-out infinite alternate-reverse;
+}
+
+.helix-fade {
+  animation: helix-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.helix-pop {
+  animation: helix-pop 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes helix-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(24px, 18px, 0) scale(1.08);
+  }
+}
+
+@keyframes helix-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes helix-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .helix-orb,
+  .helix-orb-delay,
+  .helix-fade,
+  .helix-pop {
+    animation: none;
+  }
+}

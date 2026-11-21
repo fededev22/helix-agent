@@ -1,0 +1,50 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, #f3ebe3, #e7f0f5);
+  color: #1a2430;
+}
+
+.wrap {
+  text-align: center;
+  padding: 2rem;
+}
+
+.hint {
+  color: #5b6b7c;
+}
+
+#count {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 0.5rem 0 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+button {
+  min-width: 3rem;
+  min-height: 2.75rem;
+  border: 1px solid #c9d3de;
+  border-radius: 0.5rem;
+  background: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 2px solid #d9773a;
+  outline-offset: 2px;
+}
