@@ -1,0 +1,34 @@
+feature,area,priority,original,clone,notes
+Interactive session transcript with streaming replies,session,must,yes,yes,core loop UI
+Multiline prompt with send and interrupt,session,must,yes,partial,Esc stops UI busy flag
+Agentic tool loop (gather → act → verify),agent,must,yes,yes,
+Read file tool,tools,must,yes,yes,
+Write / create file tool,tools,must,yes,yes,
+Edit / patch file tool,tools,must,yes,partial,full-file write used for demo fix
+Search content (grep) tool,tools,must,yes,yes,
+Find files by pattern (glob) tool,tools,must,yes,yes,
+Run shell command tool (sandboxed),tools,must,yes,yes,
+Permission prompt before risky tools,permissions,must,yes,yes,
+Permission modes (manual / accept edits / plan),permissions,must,yes,yes,
+Project instructions file loaded every session,memory,must,yes,yes,
+Slash commands (/help /clear /permissions /init /compact),commands,must,yes,yes,
+Status line (cwd model mode),session,should,yes,yes,
+Session resume / list past sessions,session,should,yes,yes,
+File checkpoints and rewind,safety,should,yes,no,
+Queued follow-up while agent runs,session,should,yes,no,
+Diff preview for edits,ui,should,yes,no,
+One-shot / non-interactive prompt mode,cli,should,yes,no,
+Context usage indicator,session,should,yes,no,
+Skills as markdown workflows,extend,could,yes,no,
+MCP server connections,extend,could,yes,no,
+Subagents with isolated context,extend,could,yes,no,
+Hooks on tool lifecycle,extend,could,yes,no,
+Headless / SDK API,extend,could,yes,no,
+Vim mode in prompt,ui,could,yes,no,
+Anthropic cloud VM sessions,cloud,skip,yes,skip,hosted infra we do not own
+Official IDE marketplace extensions,ide,skip,yes,skip,distribution channel
+Enterprise SSO gateway,enterprise,skip,yes,skip,org product surface
+Claude trademark name and logo,brand,skip,yes,skip,owned assets — rebrand required
+Subscription billing with Anthropic,billing,skip,yes,skip,their commerce
+GitHub Code Review product,product,skip,yes,skip,separate hosted product
+Partner plugin marketplace catalogue,marketplace,skip,yes,skip,their network
